@@ -189,15 +189,15 @@ instead of unwrap enum cases and compare.
 * Original types and union types can have a rational relationship between each other.
     Original type is a sub-type of union types contain it.
     ```swift
-        var fn0: A->Void = {print(v0)}
-        var fn1: (A|B)->Void = {print(v0)}
+        var fn0: A->Void = {print($0)}
+        var fn1: (A|B)->Void = {print($0)}
 
-        fn0 = fn1 // OK, because Original Type and Union Type has a sub-typing relationship
+        fn1 = fn0 // OK, because Original Type and Union Type has a sub-typing relationship
 
         var fn2: (A|B|C)->Void = {print($0)}
 
-        fn0 = fn2 // OK
-        fn1 = fn2 // OK
+        fn2 = fn1 // OK
+        fn2 = fn1 // OK
     ```
 * And the most **important** part, It can replace enum `Optional<T>` to represent optional types.
 ```swift
