@@ -226,4 +226,4 @@ will be the same as the union grammar:
 ## Impact on existing code
 
 * This is a new feature, developer who need declare common type will alter to this new grammar.
-* Optional<Wrapped> and IUO<Wrapped> may removed. Any optional type will automatically replaced by union type.
+* Enum based version optional or IUO will be replaced by Union-based ones. Any optional type will automatically replaced by union type.
