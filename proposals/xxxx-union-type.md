@@ -192,12 +192,12 @@ instead of unwrap enum cases and compare.
         var fn0: A->Void = {print($0)}
         var fn1: (A|B)->Void = {print($0)}
 
-        fn1 = fn0 // OK, because Original Type and Union Type has a sub-typing relationship
+        fn0 = fn1 // OK, because Original Type and Union Type has a sub-typing relationship
 
         var fn2: (A|B|C)->Void = {print($0)}
 
-        fn2 = fn1 // OK
-        fn2 = fn1 // OK
+        fn1 = fn2 // OK
+        fn0 = fn2 // OK
     ```
 * And the most **important** part, It can replace enum `Optional<T>` to represent optional types.
 ```swift
